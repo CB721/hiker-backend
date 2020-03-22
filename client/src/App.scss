@@ -1,5 +1,5 @@
-$green: #8D9F87;
-$brown: #F0DCCA;
+$green: #8d9f87;
+$brown: #f0dcca;
 $white: rgb(238, 238, 238);
 
 #root {
@@ -9,9 +9,48 @@ $white: rgb(238, 238, 238);
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   color: $white;
 }
 .container-fluid {
   margin-top: 10vh;
+}
+.quarter-col {
+  width: 25vw;
+}
+.three-quarters-col {
+  width: 70vw;
+}
+.quarter-col,
+.three-quarters-col {
+  height: auto;
+  overflow: auto;
+  margin: 0 auto;
+  float: left;
+}
+#large-logo-section {
+  background-color: $green;
+  border: 0.5vw solid $brown;
+  border-radius: 5px;
+  width: 200px;
+  margin: 0 auto;
+  .large-logo {
+    color: $white;
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+    font-size: 150px;
+    text-align: center;
+  }
+}
+.main-image-section {
+  border: 0.5vw solid $brown;
+  border-radius: 5px;
+  height: 200px;
+  margin: 0 auto;
+  overflow: hidden;
+  .main-image {
+    height: 100%;
+    width: 100%;
+  }
 }
