@@ -1,0 +1,36 @@
+@import "../../App.scss";
+
+.navigation {
+  width: 99vw;
+  height: 10vh;
+  position: relative;
+  border: 0.5vw solid $brown;
+  background: $green;
+  -webkit-box-shadow: 0px 10px 6px 0px rgba(181, 181, 181, 1);
+  -moz-box-shadow: 0px 10px 6px 0px rgba(181, 181, 181, 1);
+  box-shadow: 0px 10px 6px 0px rgba(181, 181, 181, 1);
+  .logo {
+    height: 8vh;
+    line-height: 10vh;
+    font-size: 8vh;
+    float: left;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .links {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    padding-right: 4px;
+    .link {
+      line-height: 10vh;
+      font-size: 16px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
