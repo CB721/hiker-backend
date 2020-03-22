@@ -1,0 +1,7 @@
+@import "../../App.scss";
+
+.cust-button {
+  margin: 0 auto;
+  height: 50px;
+  @include default-border;
+}
