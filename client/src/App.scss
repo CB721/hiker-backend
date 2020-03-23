@@ -38,12 +38,12 @@ a {
 #large-logo-section {
   background-color: $green;
   @include default-border;
-  width: 200px;
+  max-width: 200px;
   .large-logo {
     color: $white;
     height: 200px;
     line-height: 200px;
-    font-size: 150px;
+    font-size: 5rem;
     text-align: center;
   }
 }
@@ -51,6 +51,7 @@ a {
   @include default-border;
   margin: 0 auto;
   overflow: hidden;
+  width: 100%;
   .main-image {
     height: 200px;
     width: 100%;
@@ -71,13 +72,18 @@ a {
       font-size: 16px;
     }
     .difficulty-selection {
+      display: block;
       margin: 0 auto;
       height: 50px;
       @include default-border;
+      &:focus {
+        outline: none;
+        border-color: $brown;
+      }
     }
   }
   .search-button {
-    margin-top: 40px;
+    margin: 40px auto;
   }
 }
 .results {
@@ -96,4 +102,7 @@ a {
   p {
     text-align: center;
   }
+}
+h1 {
+  text-align: center;
 }

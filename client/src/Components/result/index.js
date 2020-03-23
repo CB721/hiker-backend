@@ -11,7 +11,7 @@ function Result(props) {
     return (
         <div className="result">
             <Row>
-                <Col size="3">
+                <Col size="sm-3">
                     <img
                         src={props.result.imgSqSmall}
                         alt={props.result.name}
@@ -19,7 +19,7 @@ function Result(props) {
                         onClick={(event) => openHikeDetails(event, props.result.url)}
                     />
                 </Col>
-                <Col size="6">
+                <Col size="sm-6">
                     <Row>
                         <Col size="12">
                             <p className="hike-name">{props.result.name}</p>
@@ -29,7 +29,7 @@ function Result(props) {
                         </Col>
                     </Row>
                 </Col>
-                <Col size="3">
+                <Col size="sm-3">
                     <Row>
                         <Col size="12">
                             <StarRatings

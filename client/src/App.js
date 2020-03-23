@@ -76,11 +76,25 @@ function App() {
             </div>
           </Col>
         </Row>
-        <div id="search" />
         <Row>
           <Col size="12">
-            <div className="search-section">
+            <section className="about-section" id="about">
+              <h1>About Hiker</h1>
+              <p>
+                Hiker makes it easy to find the perfect outdoor adventure. Whether you're a seasoned pro in search of a challenge or a newbie just looking for an easy trail to get started, you'll find the destination that works for you. Use Hiker to search the best trails—near or far—and make the most of your day in the wilderness. You'll also get driving directions and trail conditions to help remove the hassle of hiking.
+              </p>
+            </section>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="12">
+            <section className="search-section" id="search">
               <Row>
+                <Col size="12">
+                  <h1>
+                    Take A Hike!
+                  </h1>
+                </Col>
                 <Col size="sm-10 12">
                   <Row>
                     <Input
@@ -128,36 +142,26 @@ function App() {
                   </div>
                 </Col>
               </Row>
-            </div>
+            </section>
           </Col>
         </Row>
         <Row>
           <Col size="12">
             {results.length ? (
-                <div>
-                  {results.map(result => (
-                    <Result
-                      key={result.id}
-                      result={result}
-                      button={<Button
-                        text="Get Directions"
-                        disable={false}
-                        action={(event) => openDirections(event, `${result.latitude},${result.longitude}`)}
-                      />}
-                    />
-                  ))}
-                </div>
+              <div>
+                {results.map(result => (
+                  <Result
+                    key={result.id}
+                    result={result}
+                    button={<Button
+                      text="Get Directions"
+                      disable={false}
+                      action={(event) => openDirections(event, `${result.latitude},${result.longitude}`)}
+                    />}
+                  />
+                ))}
+              </div>
             ) : (<div />)}
-          </Col>
-        </Row>
-        <Row>
-          <Col size="12">
-            <section className="about-section" id="about">
-              <h1>About Hiker</h1>
-              <p>
-                Hiker makes it easy to find the perfect outdoor adventure. Whether you're a seasoned pro in search of a challenge or a newbie just looking for an easy trail to get started, you'll find the destination that works for you. Use Hiker to search the best trails—near or far—and make the most of your day in the wilderness. You'll also get driving directions and trail conditions to help remove the hassle of hiking.
-              </p>
-            </section>
           </Col>
         </Row>
       </Container>
