@@ -5,7 +5,6 @@ import Input from "./Components/input";
 import Button from "./Components/button";
 import Result from "./Components/result";
 import Footer from "./Components/footer";
-import Fade from 'react-reveal/Fade';
 import API from "./utilities/api";
 import './App.scss';
 
@@ -77,6 +76,7 @@ function App() {
             </div>
           </Col>
         </Row>
+        <div id="search" />
         <Row>
           <Col size="12">
             <div className="search-section">
@@ -134,7 +134,6 @@ function App() {
         <Row>
           <Col size="12">
             {results.length ? (
-              <Fade left cascade>
                 <div>
                   {results.map(result => (
                     <Result
@@ -148,13 +147,12 @@ function App() {
                     />
                   ))}
                 </div>
-              </Fade>
             ) : (<div />)}
           </Col>
         </Row>
         <Row>
           <Col size="12">
-            <section className="about-section">
+            <section className="about-section" id="about">
               <h1>About Hiker</h1>
               <p>
                 Hiker makes it easy to find the perfect outdoor adventure. Whether you're a seasoned pro in search of a challenge or a newbie just looking for an easy trail to get started, you'll find the destination that works for you. Use Hiker to search the best trails—near or far—and make the most of your day in the wilderness. You'll also get driving directions and trail conditions to help remove the hassle of hiking.

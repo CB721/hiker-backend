@@ -17,8 +17,16 @@ body {
   font-family: "Muli", sans-serif;
   color: $white;
 }
+a {
+  text-decoration: none;
+  color: $white;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+  }
+}
 .container {
-  margin-top: 10vh;
+  margin-top: 15vh;
   margin-bottom: 15vh;
   height: 80vh;
   overflow: scroll;
@@ -84,7 +92,8 @@ body {
   width: 100%;
   height: auto;
   margin: 5vh auto;
-  h1, p {
+  h1,
+  p {
     text-align: center;
   }
 }
