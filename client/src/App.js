@@ -25,7 +25,7 @@ function App() {
           setDisableButton(true);
         }
         break;
-      case "maximum miles":
+      case "search radius":
         setMiles(event.target.value);
         if (location.length > 5 && difficulty) {
           setDisableButton(false);
@@ -105,7 +105,7 @@ function App() {
                       handleInputChange={handleInputChange}
                     />
                     <Input
-                      name="maximum miles"
+                      name="search radius"
                       type="number"
                       value={miles}
                       disable={false}
