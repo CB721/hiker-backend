@@ -3,21 +3,20 @@ import Navbar from "./Components/nav";
 import { Container, Col, Row } from "./Components/Grid";
 import Input from "./Components/input";
 import Button from "./Components/button";
+import Result from "./Components/result";
+import Fade from 'react-reveal/Fade';
 import './App.scss';
 
 function App() {
   const [location, setLocation] = useState("");
-  const [date, setDate] = useState("");
   const [miles, setMiles] = useState(0);
   const [difficulty, setDifficulty] = useState("");
+  const [results, setResults] = useState([]);
 
   function handleInputChange(event) {
     switch (event.target.name) {
       case "your location":
         setLocation(event.target.value);
-        break;
-      case "date of hike":
-        setDate(event.target.value);
         break;
       case "maximum miles":
         setMiles(event.target.value);
@@ -30,7 +29,7 @@ function App() {
     }
   }
   function handleFormSubmit() {
-    console.log(location, date, miles, difficulty);
+    console.log(location, miles, difficulty);
   }
   return (
     <div className="App">
@@ -60,13 +59,6 @@ function App() {
                       name="your location"
                       type="text"
                       value={location}
-                      disable={false}
-                      handleInputChange={handleInputChange}
-                    />
-                    <Input
-                      name="date of hike"
-                      type="date"
-                      value={date}
                       disable={false}
                       handleInputChange={handleInputChange}
                     />
@@ -109,6 +101,17 @@ function App() {
                 </Col>
               </Row>
             </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="12">
+            {results.length ? (
+              <Fade left cascade>
+                <div className="results">
+
+                </div>
+              </Fade>
+            ) : (<div />)}
           </Col>
         </Row>
       </Container>
