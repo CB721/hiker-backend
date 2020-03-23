@@ -1,0 +1,32 @@
+@import "../../App.scss";
+
+.result {
+  width: 100%;
+  min-height: 150px;
+  height: auto;
+  @include default-border;
+  background-color: $green;
+  color: $white;
+  position: relative;
+  margin: 5px auto;
+  .star-ratings {
+      margin-bottom: 5px;
+  }
+}
+.result-img {
+  height: 100px;
+  width: 100px;
+  margin: 12.5px 12.5px;
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.hike-name,
+.hike-description {
+  text-align: center;
+  padding-top: 5px;
+}
+.hike-name {
+  text-transform: uppercase;
+}

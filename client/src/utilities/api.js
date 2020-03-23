@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-    getHikes: function(data) {
-        return axios.get("/hikes/", data);
+    getHikes: function(location, miles, difficulty) {
+        return axios.get(`/api/hikes/${location}/${miles}/${difficulty}`);
     }
 }

@@ -4,7 +4,7 @@ import "./style.scss";
 
 function Input(props) {
     return (
-        <Col size="md-3">
+        <Col size="md-4">
             <div className="input-section">
                 <p className="cust-input-name">
                     {props.name}

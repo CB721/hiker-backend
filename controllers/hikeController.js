@@ -2,7 +2,9 @@ const axios = require("axios");
 
 module.exports = {
     getHike: function (req, res) {
-        const { location, difficulty, date, miles } = req.body;
+        const location = req.params.location;
+        const difficulty = req.params.difficulty;
+        const miles = req.params.miles;
         axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
             params: {
                 address: location,
@@ -14,7 +16,7 @@ module.exports = {
                 getAllHikes(lat, lng);
             })
             .catch(err => {
-                return res.status(500).json(err);
+                return res.status(500).send(err);
             });
         function getAllHikes(lat, lng) {
             axios.get(`https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${lng}&maxDistance=${miles}&maxResults=50&key=${process.env.hikes}`)
@@ -46,7 +48,7 @@ module.exports = {
                     return res.status(200).json(filteredResults);
                 })
                 .catch(err => {
-                    return res.status(500).json(err);
+                    return res.status(500).send(err);
                 })
         }
     }

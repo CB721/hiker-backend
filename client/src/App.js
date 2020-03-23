@@ -5,31 +5,58 @@ import Input from "./Components/input";
 import Button from "./Components/button";
 import Result from "./Components/result";
 import Fade from 'react-reveal/Fade';
+import API from "./utilities/api";
 import './App.scss';
 
 function App() {
   const [location, setLocation] = useState("");
   const [miles, setMiles] = useState(0);
   const [difficulty, setDifficulty] = useState("");
+  const [disableButton, setDisableButton] = useState(true);
   const [results, setResults] = useState([]);
 
   function handleInputChange(event) {
     switch (event.target.name) {
       case "your location":
         setLocation(event.target.value);
+        if (miles && difficulty) {
+          setDisableButton(false);
+        } else {
+          setDisableButton(true);
+        }
         break;
       case "maximum miles":
         setMiles(event.target.value);
+        if (location.length > 5 && difficulty) {
+          setDisableButton(false);
+        } else {
+          setDisableButton(true);
+        }
         break;
       case "difficulty selection":
         setDifficulty(event.target.value);
+        if (miles && location.length > 5) {
+          setDisableButton(false);
+        } else {
+          setDisableButton(true);
+        }
         break;
       default:
         return;
     }
   }
   function handleFormSubmit() {
-    console.log(location, miles, difficulty);
+    API.getHikes(location, miles, difficulty)
+      .then(res => {
+        setResults(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+  function openDirections(event, trailLocation) {
+    event.preventDefault();
+    window.open(`https://www.google.com/maps/dir/${location}/${trailLocation}`, "_blank");
   }
   return (
     <div className="App">
@@ -53,7 +80,7 @@ function App() {
           <Col size="12">
             <div className="search-section">
               <Row>
-                <Col size="10">
+                <Col size="sm-10 12">
                   <Row>
                     <Input
                       name="your location"
@@ -69,7 +96,7 @@ function App() {
                       disable={false}
                       handleInputChange={handleInputChange}
                     />
-                    <Col size="md-3">
+                    <Col size="md-4">
                       <div className="difficulty-section">
                         <p className="cust-input-name">
                           Difficulty Level
@@ -90,11 +117,11 @@ function App() {
                     </Col>
                   </Row>
                 </Col>
-                <Col size="2">
+                <Col size="sm-2 12">
                   <div className="search-button">
                     <Button
                       text="Find Hike"
-                      disable={false}
+                      disable={disableButton}
                       action={handleFormSubmit}
                     />
                   </div>
@@ -107,8 +134,18 @@ function App() {
           <Col size="12">
             {results.length ? (
               <Fade left cascade>
-                <div className="results">
-
+                <div>
+                  {results.map(result => (
+                    <Result
+                      key={result.id}
+                      result={result}
+                      button={<Button
+                        text="Get Directions"
+                        disable={false}
+                        action={(event) => openDirections(event, `${result.latitude},${result.longitude}`)}
+                      />}
+                    />
+                  ))}
                 </div>
               </Fade>
             ) : (<div />)}
