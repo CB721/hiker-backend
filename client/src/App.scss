@@ -19,6 +19,9 @@ body {
 }
 .container {
   margin-top: 10vh;
+  margin-bottom: 10vh;
+  height: 80vh;
+  overflow: scroll;
 }
 .App {
   margin: 0;

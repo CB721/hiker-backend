@@ -4,6 +4,7 @@ import { Container, Col, Row } from "./Components/Grid";
 import Input from "./Components/input";
 import Button from "./Components/button";
 import Result from "./Components/result";
+import Footer from "./Components/footer";
 import Fade from 'react-reveal/Fade';
 import API from "./utilities/api";
 import './App.scss';
@@ -152,6 +153,7 @@ function App() {
           </Col>
         </Row>
       </Container>
+      <Footer />
     </div>
   );
 }

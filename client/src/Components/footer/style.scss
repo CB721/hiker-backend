@@ -1,0 +1,28 @@
+@import "../../App.scss";
+
+.footer > .bottom {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  font-weight: bolder;
+}
+.footer {
+  display: block;
+  background: $green;
+  height: 10vh;
+  position: fixed;
+  width: 100%;
+  color: $white;
+  overflow: auto;
+  text-align: right;
+  padding: 10px;
+  z-index: 10;
+  bottom: 0;
+}
+@media only screen and (max-width: 600px) {
+  .footer {
+    text-align: center;
+  }
+}
