@@ -19,7 +19,7 @@ body {
 }
 .container {
   margin-top: 10vh;
-  margin-bottom: 10vh;
+  margin-bottom: 15vh;
   height: 80vh;
   overflow: scroll;
 }
@@ -77,4 +77,14 @@ body {
   background-color: $green;
   width: 100%;
   height: auto;
+}
+.about-section {
+  @include default-border;
+  background-color: $green;
+  width: 100%;
+  height: auto;
+  margin: 5vh auto;
+  h1, p {
+    text-align: center;
+  }
 }

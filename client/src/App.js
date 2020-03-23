@@ -152,6 +152,16 @@ function App() {
             ) : (<div />)}
           </Col>
         </Row>
+        <Row>
+          <Col size="12">
+            <section className="about-section">
+              <h1>About Hiker</h1>
+              <p>
+                Hiker makes it easy to find the perfect outdoor adventure. Whether you're a seasoned pro in search of a challenge or a newbie just looking for an easy trail to get started, you'll find the destination that works for you. Use Hiker to search the best trails—near or far—and make the most of your day in the wilderness. You'll also get driving directions and trail conditions to help remove the hassle of hiking.
+              </p>
+            </section>
+          </Col>
+        </Row>
       </Container>
       <Footer />
     </div>
