@@ -2,19 +2,23 @@ package hikerproject.api;
 
 public class Api {
 
-	private final long id;
-	private final String content;
+	private final String location;
+	private final String difficulty;
+	private final int miles;
 
-	public Api(long id, String content) {
-		this.id = id;
-		this.content = content;
+	public Api(String location, String difficulty, int miles) {
+        this.location = location;
+        this.difficulty = difficulty;
+        this.miles = miles;
 	}
 
-	public long getId() {
-		return id;
+	public String getLocation() {
+		return location;
 	}
-
-	public String getContent() {
-		return content;
+	public String getDifficulty() {
+		return difficulty;
+	}
+	public int getMiles() {
+		return miles;
 	}
 }
